@@ -11,5 +11,6 @@ Lárus Ármann Kjartansson
 VERKEFNI 1
 
   * [VERKEFNI 1 auglýsing](Vefhönnun/Verkefni_1-auglýsing/anim.html)
-
-{{% w3-button-icon                                                %}}Hello world{{% /w3-button-icon %}}
+  
+  
+  [![button](http://www.presentationpro.com/images/product/medium/slide/PPP_CGENE_LT3_Presentation-PowerPoint-Slide-Graphic_Push_Button_Up.jpg)](https://mattermost.com)
