@@ -25,4 +25,4 @@ VERKEFNI 1
   {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theIcon"    (.Get $myPos) }} {{end}}
   {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$.Scratch.Set "theClasses" (.Get $myPos) }} {{end}}
 {{- end}}
-<a class="{{$.Scratch.Get `theClasses`}}" href="{{$.Scratch.Get `theHref` | relURL }}">{{if $.Scratch.Get `theIcon`}}<i class="{{$.Scratch.Get `theIcon`}} fa-1x"></i>{{end}}&nbsp;{{ .Inner }}</a>
+<a class="{{$.Scratch.Get `theClasses`}}" href="{{$.Scratch.Get `theHref` | relURL }}">{{if $.Scratch.Get `theIcon`}}<i class="{{$.https://larusarmann.github.io/Skoli-haust-2020/ `theIcon`}} fa-1x"></i>{{end}}&nbsp;{{ .Inner }}</a>
