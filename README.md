@@ -12,3 +12,4 @@ VERKEFNI 1
 
   * [VERKEFNI 1 auglýsing](Vefhönnun/Verkefni_1-auglýsing/anim.html)
 
+{{% w3-button-icon                                                %}}Hello world{{% /w3-button-icon %}}
