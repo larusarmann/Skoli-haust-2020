@@ -13,4 +13,4 @@ VERKEFNI 1
   * [VERKEFNI 1 auglýsing](Vefhönnun/Verkefni_1-auglýsing/anim.html)
   
   
-  [![button](https://toppng.com/uploads/preview/would-you-like-to-get-our-news-direct-to-your-email-click-here-button-transparent-background-11563245154azp2tdmpao.png)](https://mattermost.com)
+  [![button](https://toppng.com/uploads/preview/would-you-like-to-get-our-news-direct-to-your-email-click-here-button-transparent-background-11563245154azp2tdmpao.png)](inna.is)
