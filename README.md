@@ -12,5 +12,4 @@ VERKEFNI 1
 
   * [VERKEFNI 1 auglýsing](Vefhönnun/Verkefni_1-auglýsing/anim.html)
   
-  
-  [![button](https://www.freepngimg.com/thumb/play_button/25569-6-play-button-transparent-thumb.png)](https://nam.inna.is/Components/Students/Students.html#/)
+
