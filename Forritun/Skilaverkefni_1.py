@@ -1,3 +1,15 @@
+# Lárus Ármann Kjartansson
+#3.Sep 2020
+def word_mixer(word_list):
+    new_words = []
+    word_list.sort()
+    while(len(word_list) > 5):
+        new_words.append(word_list.pop(-5))
+        new_words.append(word_list.pop(0))
+        new_words.append(word_list.pop(-1))
+        new_words.append('\n')
+    return(new_words)
+
 on = True
 while on == True:
     print("1.Dictionary ") 
@@ -38,7 +50,7 @@ while on == True:
             elif val1 == 2:
                 lykill = input("Please input a key: ") 
                 gildi = input("Plesse input a value: ") 
-                dirt = {lykill:gildi}
+                dirt={lykill:gildi}
             
             elif val1 == 3:
                 print(str(dirt))
@@ -57,16 +69,61 @@ while on == True:
                 print("Eftir breytingu")
                 print(str(dirt))
             elif val1 == 5:
-                on1 = false
+                on1 = False
             else:
                 on1 = False
-
-
-
-
     elif val == 2:
-        pass
+        #############
+        nofnForr = []
+        nofnVesm = []
+        nemendurForr = int(input("hve margir eru skráðir í hópinn FORR2HF05CU:"))
+        nemendurVesm = int(input("hve margir eru skráðir í hópinn VESM1VS05AU:"))
+        for x in range(nemendurForr):
+            nemandiForr = input("Forr Nafn: ")
+            nofnForr.append(nemandiForr)
+        #############
+        for x in range(nemendurVesm):
+            nemandiVesm = input("Vesm Nafn: ")
+            nofnVesm.append(nemandiVesm)
+        ### Forr
+        print("Óraðaður listi",nofnForr)
+        print("Raðaður listi",sorted(nofnForr))
+        ### Vesm
+        print("Óraðaður listi",nofnVesm)
+        print("Raðaður listi",sorted(nofnVesm))
+        print("\n *** Forritun ***\n")
+        for elem in nofnForr:
+            print(elem)
+        print("\n *** Verksmiðja ***\n")
+        for elem in nofnVesm:
+            print(elem)
+        forr = len(nofnForr)
+        vesm = len(nofnVesm)
+        if forr < vesm:
+            print("Verksmiðja er stærri")
+        elif vesm < forr:
+            print("Forritun er stærri")        
+        else:
+            print("Hóparnir eru janfn stórir")
+        
+        
+        #nofnForr.pop(-0)
+        #nofnForr.pop(-1)
+        
+        
+
     elif val == 3:
-        pass
+        str = input('Sláðu inn setningu: ')
+        wordlist = str.split()
+        for i in range(len(wordlist)):
+            if len(wordlist[i]) < 4:
+                wordlist[i] = wordlist[i].lower()
+            if len(wordlist[i]) > 6:
+                wordlist[i] = wordlist[i].upper()
+        if len(wordlist) > 5:
+            newlist = word_mixer(wordlist)
+            #print(newlist)
+            for i in range(len(newlist)):
+                print(newlist[i], end=' ')
     elif val == 4:
         on = False
