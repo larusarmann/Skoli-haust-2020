@@ -1,14 +1,7 @@
 # Lárus Ármann Kjartansson
 #3.Sep 2020
-def word_mixer(word_list):
-    new_words = []
-    word_list.sort()
-    while(len(word_list) > 5):
-        new_words.append(word_list.pop(-5))
-        new_words.append(word_list.pop(0))
-        new_words.append(word_list.pop(-1))
-        new_words.append('\n')
-    return(new_words)
+# Karl Philip Vallesterol
+#3.Sep 2020
 
 on = True
 while on == True:
@@ -78,6 +71,7 @@ while on == True:
         nofnVesm = []
         nemendurForr = int(input("hve margir eru skráðir í hópinn FORR2HF05CU:"))
         nemendurVesm = int(input("hve margir eru skráðir í hópinn VESM1VS05AU:"))
+        
         for x in range(nemendurForr):
             nemandiForr = input("Forr Nafn: ")
             nofnForr.append(nemandiForr)
@@ -86,11 +80,13 @@ while on == True:
             nemandiVesm = input("Vesm Nafn: ")
             nofnVesm.append(nemandiVesm)
         ### Forr
+        nofnForr.sort()
+        nofnVesm.sort()
         print("Óraðaður listi",nofnForr)
-        print("Raðaður listi",sorted(nofnForr))
+        print("Raðaður listi",nofnForr)
         ### Vesm
         print("Óraðaður listi",nofnVesm)
-        print("Raðaður listi",sorted(nofnVesm))
+        print("Raðaður listi",nofnVesm)
         print("\n *** Forritun ***\n")
         for elem in nofnForr:
             print(elem)
@@ -105,25 +101,32 @@ while on == True:
             print("Forritun er stærri")        
         else:
             print("Hóparnir eru janfn stórir")
+
+        fjar1 = nofnForr.pop(-2)
+        fjar2 = nofnForr.pop(-1)
         
-        
-        #nofnForr.pop(-0)
-        #nofnForr.pop(-1)
-        
+        nofnVesm.append([fjar1,fjar2])
+        print("FORR",nofnForr)
+        print("VESM",nofnVesm)
+    elif val == 3:
+        username = input("Please enter your username:")
+        password = input("Please enter your password:")  
+        with open('Forritun\Lyklar.txt','r',encoding = 'utf-8') as f:
+            for line in f: 
+                if username + ';' + password + '\n' == line:
+                    print('Þú ert meðlimur')
+                    break
+                else:
+                    print('Þú ert ekki meðlimur')
         
 
-    elif val == 3:
-        str = input('Sláðu inn setningu: ')
-        wordlist = str.split()
-        for i in range(len(wordlist)):
-            if len(wordlist[i]) < 4:
-                wordlist[i] = wordlist[i].lower()
-            if len(wordlist[i]) > 6:
-                wordlist[i] = wordlist[i].upper()
-        if len(wordlist) > 5:
-            newlist = word_mixer(wordlist)
-            #print(newlist)
-            for i in range(len(newlist)):
-                print(newlist[i], end=' ')
+
     elif val == 4:
         on = False
+
+
+
+
+
+
+
