@@ -12,4 +12,9 @@ VERKEFNI 1
 
   * [VERKEFNI 1 auglýsing](Vefhönnun/Verkefni_1-auglýsing/anim.html)
   
+-----------------------------------------------------------------------
+<!---
+VERKEFNI 2
 
+  * [VERKEFNI 1 SVG Animation](Vefhönnun/Verkefni_2-svg_Animation/index.html)
+--->
