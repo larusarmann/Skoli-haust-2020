@@ -11,7 +11,7 @@ while on == True:
     print("4.Haetta")
 
     val = int(input("Veldu hvað þú villt gera: ")) 
-
+*/
     if val == 1:
         dirt = { "Kopavogur":"200",
                  "Miðborg":"100",
@@ -111,22 +111,14 @@ while on == True:
     elif val == 3:
         username = input("Please enter your username:")
         password = input("Please enter your password:")  
-        with open('Forritun\Lyklar.txt','r',encoding = 'utf-8') as f:
+        with open('Forritun\Verkefni með einkunn\Skilaverkefni 1\Lyklar.txt','r',encoding = 'utf-8') as f:
             for line in f: 
                 if username + ';' + password + '\n' == line:
                     print('Þú ert meðlimur')
                     break
                 else:
                     print('Þú ert ekki meðlimur')
-        
 
 
     elif val == 4:
         on = False
-
-
-
-
-
-
-
