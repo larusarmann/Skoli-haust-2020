@@ -1,4 +1,3 @@
-#Karl Philip Vallesterol
 
 import random
 

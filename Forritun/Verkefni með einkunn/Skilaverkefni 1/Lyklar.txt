@@ -10,3 +10,8 @@ Eymar;Ekkert
 Anna;Akkeri
 Kristín;Kennsla
 Daníel;Dropasteinn
+
+import random
+
+
+

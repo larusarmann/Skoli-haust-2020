@@ -1,17 +1,15 @@
-# Lárus Ármann Kjartansson
-#3.Sep 2020
-# Karl Philip Vallesterol
-#3.Sep 2020
-
+#Lárus Ármann Kjartansson
+#03.09.2020
 on = True
 while on == True:
     print("1.Dictionary ") 
     print("2.Hopar ") 
     print("3.Lykla vinning")
-    print("4.Haetta")
+    print("4.Rugla texti")
+    print("5.Haetta")
 
     val = int(input("Veldu hvað þú villt gera: ")) 
-*/
+
     if val == 1:
         dirt = { "Kopavogur":"200",
                  "Miðborg":"100",
@@ -67,34 +65,34 @@ while on == True:
                 on1 = False
     elif val == 2:
         #############
-        nofnForr = []
-        nofnVesm = []
+        nafnForr = []
+        nafnVesm = []
         nemendurForr = int(input("hve margir eru skráðir í hópinn FORR2HF05CU:"))
         nemendurVesm = int(input("hve margir eru skráðir í hópinn VESM1VS05AU:"))
         
         for x in range(nemendurForr):
             nemandiForr = input("Forr Nafn: ")
-            nofnForr.append(nemandiForr)
+            nafnForr.append(nemandiForr)
         #############
         for x in range(nemendurVesm):
             nemandiVesm = input("Vesm Nafn: ")
-            nofnVesm.append(nemandiVesm)
+            nafnVesm.append(nemandiVesm)
         ### Forr
-        nofnForr.sort()
-        nofnVesm.sort()
-        print("Óraðaður listi",nofnForr)
-        print("Raðaður listi",nofnForr)
+        nafnForr.sort()
+        nafnVesm.sort()
+        print("Óraðaður listi",nafnForr)
+        print("Raðaður listi",nafnForr)
         ### Vesm
-        print("Óraðaður listi",nofnVesm)
-        print("Raðaður listi",nofnVesm)
+        print("Óraðaður listi",nafnVesm)
+        print("Raðaður listi",nafnVesm)
         print("\n *** Forritun ***\n")
-        for elem in nofnForr:
+        for elem in nafnForr:
             print(elem)
         print("\n *** Verksmiðja ***\n")
-        for elem in nofnVesm:
+        for elem in nafnVesm:
             print(elem)
-        forr = len(nofnForr)
-        vesm = len(nofnVesm)
+        forr = len(nafnForr)
+        vesm = len(nafnVesm)
         if forr < vesm:
             print("Verksmiðja er stærri")
         elif vesm < forr:
@@ -102,23 +100,50 @@ while on == True:
         else:
             print("Hóparnir eru janfn stórir")
 
-        fjar1 = nofnForr.pop(-2)
-        fjar2 = nofnForr.pop(-1)
+        fjar1 = nafnForr.pop(-2)
+        fjar2 = nafnForr.pop(-1)
         
-        nofnVesm.append([fjar1,fjar2])
-        print("FORR",nofnForr)
-        print("VESM",nofnVesm)
+        nafnVesm.append([fjar1,fjar2])
+        print("FORR",nafnForr)
+        print("VESM",nafnVesm)
+    
     elif val == 3:
         username = input("Please enter your username:")
         password = input("Please enter your password:")  
+        isMember = False
+        isLoggedIn = False
+        isPassword = False
         with open('Forritun\Verkefni með einkunn\Skilaverkefni 1\Lyklar.txt','r',encoding = 'utf-8') as f:
             for line in f: 
-                if username + ';' + password + '\n' == line:
-                    print('Þú ert meðlimur')
-                    break
-                else:
-                    print('Þú ert ekki meðlimur')
-
-
-    elif val == 4:
-        on = False
+                x = line.rstrip().split(";")
+                if username == x[0]:
+                    isMember = True
+                
+                if username == x[0] and password == x[1]:
+                    isLoggedIn = True
+                    
+                if password == x[1]:
+                    isPassword = True
+                
+            if isLoggedIn == True:
+                print("Þú ert meðlimur")
+            elif isMember or isPassword:
+                print("Það er eitthvað rangt annað hvort nafn eða lykilorð")
+            else:
+                print("Þú ert ekki meðlimur")
+                    
+    elif val == 4: 
+        word = input("put word:")
+        loksins = ''.join([ word[x:x+2][::-1] for x in range(0, len(word), 2) ]) 
+        loksins2 = loksins.lower()
+        print(loksins2)
+        valkost = input("viltu afkoda ja/nei:")
+        if valkost == "ja":
+            afkodad = ''.join([ loksins[x:x+2][::-1] for x in range(0, len(loksins), 2) ]) 
+            print(afkodad)
+        elif valkost == "nei":
+            break
+        
+        
+    else:
+        on = False 
