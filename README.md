@@ -18,3 +18,8 @@ VERKEFNI 2
 
   * [VERKEFNI 2 SVG Animation](Vefhönnun/Verkefni_2-svg_Animation/Index.html)
 
+-----------------------------------------------------------------------
+
+VERKEFNI 3
+
+  * [VERKEFNI 3 Dropdown Menu](Vefhönnun/Verkefni_3-DropDownMenu/Index.html)
