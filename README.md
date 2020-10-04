@@ -22,4 +22,4 @@ VERKEFNI 2
 
 VERKEFNI 3
 
-  * [VERKEFNI 3 Dropdown Menu](Vefhönnun/Verkefni_3-DropDownMenu/Index.html)
+  * [VERKEFNI 3 Dropdown Menu](Vefhönnun/Verkefni_3-DropDownMenu/index.html)
