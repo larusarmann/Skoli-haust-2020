@@ -92,22 +92,29 @@ label {
 
 .icon-spotify:before {
   content: "\ea94";
+  color: black;
 }
 .icon-twitter:before {
   content: "\ea96";
+  color: black;
 }
 .icon-youtube:before {
   content: "\ea9d";
+  color: black;
 }
 .icon-steam2:before {
   content: "\eaad";
+  color: black;
 }
 .icon-github:before {
   content: "\eab0";
+  color: black;
 }
 .icon-brand79:before {
   content: "\ead8";
+  color: black;
 }
 .icon-play:before {
   content: "\e912";
+  color: black;
 }
