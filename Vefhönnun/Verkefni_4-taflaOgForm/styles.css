@@ -1,0 +1,10 @@
+body {
+    background: burlywood;
+}
+
+@media screen and (min-width:600px) {
+    .dalkur {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
