@@ -1,10 +1,38 @@
 body {
     background: burlywood;
+    border-radius: 1em;
+    max-width: 500px;
+    margin: auto;
+    border: 3px solid black;
+    padding: 2em;
 }
 
 @media screen and (min-width:600px) {
     .dalkur {
-        display: grid;
+        display: flex;
         grid-template-columns: 1fr 1fr;
     }
+    .second{
+      padding-left: 10em;
+    }
+    .tafla{
+        justify-content: center;
+        margin:auto;
+    }
+ 
 }
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+  }
+  /* Fann þetta á w3Schools til þess að láta aðra hverja línu vera dekkri */
+  tr:nth-child(even) {
+    background-color: rgb(221, 105, 105);
+  }
+  tr:nth-child(odd) {
+    background-color: rgb(233, 64, 64);
+  }

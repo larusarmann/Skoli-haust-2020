@@ -7,41 +7,73 @@
     <title>Tafla og Form</title>
 </head>
 <body>
-    <textarea></textarea>
-    <form method="" action="#">
-        <label>Nafn:</label><br>
-        <input type="text" name="nafn" required>
-        <br>
-        <label>Símanúmer:</label><br>
-        <input type="number" name="Sími" required>
-        <br>
-        <label>Email:</label><br>
-        <input type="email" name="Email" required>
-        <br>
-        <label>Dagsetning:</label><br>
-        <input type="Date" name="" required>
-        <br>
+    <form method="POST" action="#">
+        <div class="dalkur">
+            <section>
+                <label>Nafn:</label><br>
+                <input type="text" placeholder="Nafn" name="nafn" required>
+                <br>
+                <label>Símanúmer:</label><br>
+                <input type="number" placeholder="1234567" name="Sími" required>
+                <br>
+                <label>Email:</label><br>
+                <input type="email" placeholder="Test@Gmail.com" name="Email" required>
+                <br>
+            </section>
+            <section class="dalkur2">
+                <label>Dagsetning:</label><br>
+                <input type="Date" name="" required>
+                <br>
 
-        <input type="Checkbox" checked> Val 1
-        <br>
-        <input type="Checkbox"> Val 2
-        <br>
-        <input type="Checkbox"> Val 3
-        <br>
-        <input type="Checkbox"> Val 4
-        <br>
+                <input type="Checkbox" checked> Val 1
 
-        <input type="radio" checked> Val 1
-        <br>
-        <input type="radio"> Val 2
-        <br>
-        <input type="radio"> Val 3
-        <br>
-        <input type="radio"> Val 4
-        <br>
+                <input type="Checkbox"> Val 2
 
+                <input type="Checkbox"> Val 3
+
+                <input type="Checkbox"> Val 4
+                <br>
+
+                <input type="radio" name="day" value="Friday" checked> Friday<br>
+                <input type="radio" name="day" value="Saturday" checked> Saturday<br>
+                <input type="radio" name="day" value="Sunday" checked> Sunday<br>
+
+                <select name="day">
+                    <option value="Friday" selected>Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </section>
+        </div>
+        <textarea></textarea>
 
         <input type="submit" value="Skrá">
     </form>
+    <br>
 
+    <table>
+        <div class="tafla">
+            <tr><b>
+            <th>Fyrirtæki</th>
+            <th>Sími</th>
+            <th>Hlutverk</th>
+            </b>    
+            </tr>
+            <tr>
+            <td> <a href="https://www.dominos.is">Dominos Pizza</a></td>
+            <td>581 2345</td>
+            <td>Pizzastaður</td>
+            </tr>
+            <tr>
+            <td><a href="https://tskoli.is">Tækniskólinn</a></td>
+            <td>514 9000</td>
+            <td>Skóli</td>
+            </tr>
+            <tr>
+            <td><a href="https://github.com/larusarmann">Github</a></td>
+            <td>???????</td>
+            <td>Skráasafn</td>
+            </tr>
+        </div>
+      </table>
 </body>
