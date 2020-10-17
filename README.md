@@ -1,7 +1,7 @@
 # Skoli-haust-2020
  allt skóla drasl
 
- * [Github](https://github.com/larusarmann/larusarmann.github.io)
+ * [Github](https://github.com/larusarmann/Skoli-haust-2020)
 
 Vefhönnun 2020
 Lárus Ármann Kjartansson
