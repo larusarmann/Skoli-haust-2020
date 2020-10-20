@@ -1,128 +1,177 @@
-import csv
-from klasi import Verkalydsfelag
-
-verkalydsfelag = []
-def opnaskra():
-    with open("Forritun/Verkefni með einkunn/Skilaverkefni 3/verkalydsfelag.csv" ,'r',newline='',encoding='utf-8') as file:
-        reader = csv.reader(file,delimiter=';')
-        print(reader)
-        for row in reader:
-            #print(row)
-            hlutur = Verkalydsfelag(row[0],row[1],row[2],row[3])
-            verkalydsfelag.append(hlutur)
-          
-def skrifaSkra(): #Skrifar í skrána.
-    if len(verkalydsfelag) == 0:
-        print('--Listi tomur--')
-    else:
-        with open('Forritun/Verkefni með einkunn/Skilaverkefni 3/verkalydsfelag.csv','w', newline='',encoding='utf-8') as file:
-            writer = csv.writer(file,delimiter=';',quotechar='"',quoting=csv.QUOTE_MINIMAL)
-            for x in verkalydsfelag:
-                writer.writerow([x.nafn,x.felagsnumer,x.laun,x.kennitala])
-        print("--Buid ad vista--")
-
-def nyrMedlimur(): #baetir inn nyjum medlimi tilviki (object,hluti)
-    
-    nyttNafn = input("Sladu inn nafn a medlimi: ")
-    nyttFelagsnumer = input("Sladu inn felagsnumer: ")
-    nyttLaun = input("Sladu inn laun: ")
-    nyttKennitala = input("Sladu inn kennitala: ")
-    nyrHlutur = Verkalydsfelag(nyttNafn,nyttFelagsnumer,nyttLaun,nyttKennitala) # bý til nýtt object 
-    verkalydsfelag.append(nyrHlutur) # set hlutinn i lista
-    print("--Nyr medlimur hefur verid skradur, a eftir ad skrifa i skranna--")
-
-def eydaMedlimi(eydaNafn,numer): #eyðir tilvikiobject,hluti
-    for x in verkalydsfelag:
-        if str(x.felagsnumer) == numer and str(x.nafn) == eydaNafn:
-            verkalydsfelag.remove(x)
-            return eydaNafn+"hefur verid eytt" 
-        else:
-            return "Ekki tókst að eyða"+eydaNafn+"ur skranni. Nafn og felagsnumer passar ekki. Reyndu aftur sidar"
+from Nemi import Grunnskolanemi #importar Grunnskólanemi
+from Nemi import Framhaldsskolanemi #importar Framhaldsskolanemi
+from Nemi import Haskolanemi #importar Haskolanemi
 
 
-def breytaMedlimi(breytaNafn,numer): #breytir tilviki(object,hluti)
-     for x in verkalydsfelag:
-        if str(x.felagsnumer) == numer and str(x.nafn) == breytaNafn:
-            verkalydsfelag.replace(x)
-            return breytaNafn+"hefur verid breytt" 
-        else:
-            return "Ekki tókst að breyta"+breytaNafn+"ur skranni. Nafn og felagsnumer passar ekki. Reyndu aftur sidar"
+def fjoldiKyn(listi,kyn): #bý til fall sem tekur inn Listan og kyn
+    teljari=0 # setur teljarann sem 0
+    for nemi in listi: #fyrir nema í listanum
+        if kyn == nemi.kyn: #ef kynið er =kynið sem var beðið um
+            teljari = teljari + 1 # bætir við einum í teljara
+    return teljari # skilar teljaranum
 
-
-def prentaVerkalydsfelag(): #skrifar á skjáinn allt sem er í skránni(innhald listans af tilvikum)
-    pass
-
-def nafnLaun():#skrifar á skjáinn nafn og laun hvers meðlimar fyrir sig.
-    pass
-
-def utborgudlaun(): #Útborguð laun hvers meðlimar verkalýðsfélagsins heildarskattar(): skrifar á skjáinn heildarskatta allra meðlima verkalýðsfélagsins
-    pass
-
-def mittFall(): #nefnið fallið einhverju lýsandi nafni
-    pass
-
-
-flag=True
-while flag:
-    print('1.Syna skra')
-    print('2.Baeta vid medlim ')
-    print('3.Eyda ut med')
-    print('4.Breyta upplys')
-    print('5.Nafn og heildarlaun')
-    print('6.Utborgud laun')
-    print('7.Skrifa ut alla sem eru faeddir eftir ????')
-    print('8.Skrifa breytingar i skra')
-    print('9.Haetta')
-
-    val = input("veldu 1 til 9: ")
-
-    if val == "1":
-        for medlimur in verkalydsfelag:
-            print(medlimur.prenta_upplysingar_um_medlim())
-        print("--buid--")
-            
-    
-    elif val =="2":
-        nyrMedlimur()
+def skolar(listi): #
+    skolalisti=[] #
+    for skoli in listi: #
+        if skoli.nafnSkola not in skolalisti: #
+            skolalisti.append(skoli.nafnSkola) #
         
-    elif val =="3":
-        print("--------------")
-        for medlimur in verkalydsfelag:
-            print(medlimur.prenta_upplysingar_um_medlim())
-        print("--------------")
-        eydaNafn = input("Delete the nafn: ")
-        numer = input("What is the felagsnumer: ")
-        print(eydaMedlimi(eydaNafn,numer))
-      
-    elif val =="4":
-        print("--------------")
-        for medlimur in verkalydsfelag:
-            print(medlimur.prenta_upplysingar_um_medlim())
-        print("--------------")
-        breyting = input("Hvað viltu breyta: ")
-        numer = input("What is the felagsnumer: ")
-        repla = input('what would you change it to: ')
-        print(breytaMedlimi(repla,numer))
-      
+    return skolalisti #
+             
+def nemarIskola(listi, skoliNafn): #
+    nemendalisti=[] #
+    for nemi in listi: #
+        if nemi.nafnSkola == skoliNafn: #
+            nemendalisti.append(nemi) #
+    return nemendalisti #
 
-      
-    elif val =="5":
-        pass
-      
-    elif val =="6":
-        pass
-      
-    elif val =="7":
-        pass
-      
-    elif val =="8":
-        skrifaSkra()
-      
-    elif val =="9":
-        print('--LOL--')
-        flag = False
+def fjoldiAfanga(listi, fjoAfanga): #
+    afangaListi=[] #
+    for nemi in listi: # 
+        if nemi.fjAfanga <= fjoAfanga: #
+            afangaListi.append(nemi) # 
+    return afangaListi #
 
+def bondaFolk(listi): #
+    utanbæjarListi=[] #
+    for nemi in listi: #
+        if nemi.postnmr >= 300: #
+            utanbæjarListi.append(nemi) #
+    return utanbæjarListi #
 
+def skuldaNemendur(listi): #
+    skuldarlisti=[] #
+    for nemi in listi: #
+        if nemi.namslan == True: #
+            skuldarlisti.append(nemi) #
+    return skuldarlisti #
 
+def heildarSkuld(listi): #
+    summa=0 #
+    for nemi in listi: #
+        if nemi.namslanSkuld > 0: #
+            summa = summa + nemi.namslanSkuld #   
+    return summa #
 
-   
+grunnskolanemar = [Grunnskolanemi( "230777-3069","Kjartan Pálsson","Karl","104","Hólabrekkuskóli","kjartan.palon@hotmail.com","Páll Bjarnason"), #
+                   Grunnskolanemi( "031103-3040","Lárus Kjartansson","Karl","104","Langholtsskoli","larus.arann@gmail.com","Kjartan Pálsson"), #
+                   Grunnskolanemi( "110810-5281","Styrmir Kjartansson","Karl","104","Langholtsskoli","Styrm.kjartansson@gmail.com","Kjartan Pálsson"), #
+                   Grunnskolanemi( "170376-3079","Laufey Sigurðardóttir","Kona","104","Hríseyjarskóli","laufer@hotmail.com","Sigurður Hólmgrímsson"), #
+                   Grunnskolanemi( "191091-2919","Daníel Guðmundsson","Karl","104","Hólabrekkuskóli","Daníel@hotmail.com","Páll Bjarnason"), #
+                   Grunnskolanemi( "300101-5684","Lilja Sveinssdóttir","Kona","104","Hólabrekkuskóli","Lilja@hotmail.com","Páll Bjarnason"), #
+                   Grunnskolanemi( "011264-3069","Konni Forritunarkennari","Karl","104","Hólabrekkuskóli","Konni@gmail.com","Forritun"), #
+                   Grunnskolanemi( "191003-2920","Sigríður Sverrisdóttir","Kona","104","Hólabrekkuskóli","Sigríður@hotmail.com","Páll Bjarnason"), #
+                   Grunnskolanemi( "120812-3568","Stefán Pálsson","Karl","104","Hólabrekkuskóli","Stefán@hotmail.com","Páll Bjarnason"), #
+                   Grunnskolanemi( "060385-3051","Katrín Björnssdóttir","Kona","104","Hólabrekkuskóli","Katrín@hotmail.com","Páll Bjarnason")] #
+
+framhaldsskolanemar = [Framhaldsskolanemi( "230777-3069","Kjartan Pálsson","Karl",400,"Tækniskólinn","kjartan.palon@hotmail.com","Tölvubraut",2), #
+                    Framhaldsskolanemi( "031103-3040","Lárus Kjartansson","Karl",104,"Menntaskólin við Sund","larus.arann@gmail.com","Tölvubraut",7), #
+                    Framhaldsskolanemi( "110810-5281","Styrmir Kjartansson","Karl",104,"Fjölbrautarskólin Ármúla","Styrm.kjartansson@gmail.com","Náttúrufræðibraut",6,True), #
+                    Framhaldsskolanemi( "170376-3079","Laufey Sigurðardóttir","Kona",104,"Tækniskólinn","laufer@hotmail.com","Tölvubraut",5), #
+                    Framhaldsskolanemi( "191091-2919","Daníel Guðmundsson","Karl",104,"Menntaskólin við Sund","Daníel@hotmail.com","Grafísk miðlun",6), #
+                    Framhaldsskolanemi( "300101-5684","Lilja Sveinssdóttir","Kona",605,"Fjölbrautarskólin Ármúla","Lilja@hotmail.com","Náttúrufræðibraut",7), #
+                    Framhaldsskolanemi( "011264-3069","Konni Forritunarkennari","Karl",104,"Menntaskólin við Sund","Konni@gmail.com","Tölvubraut",3), #
+                    Framhaldsskolanemi( "191003-2920","Sigríður Sverrisdóttir","Kona",740,"Tækniskólinn","Sigríður@hotmail.com","Grafísk miðlun",6,True), #
+                    Framhaldsskolanemi( "120812-3568","Stefán Pálsson","Karl",104,"Menntaskólin við Sund","Stefán@hotmail.com","Grafísk miðlun",5), #
+                    Framhaldsskolanemi( "060385-3051","Katrín Björnssdóttir","Kona",104,"Tækniskólinn","Katrín@hotmail.com","Náttúrufræðibraut",6)] #
+
+haskolanemar = [Haskolanemi( "230777-3069","Kjartan Pálsson","Karl",400,"Tækniskólinn","kjartan.palon@hotmail.com","grunnnám",0), #
+                    Haskolanemi( "031103-3040","Lárus Kjartansson","Karl",104,"Menntaskólin við Sund","larus.arann@gmail.com","framhaldsnám",0), #
+                    Haskolanemi( "110810-5281","Styrmir Kjartansson","Karl",104,"Fjölbrautarskólin Ármúla","Styrm.kjartansson@gmail.com","grunnnám",800000,True), #
+                    Haskolanemi( "170376-3079","Laufey Sigurðardóttir","Kona",104,"Tækniskólinn","laufer@hotmail.com","grunnnám",0), #
+                    Haskolanemi( "191091-2919","Daníel Guðmundsson","Karl",104,"Menntaskólin við Sund","Daníel@gmail.com","framhaldsnám",250000,True), #
+                    Haskolanemi( "300101-5684","Lilja Sveinssdóttir","Kona",605,"Fjölbrautarskólin Ármúla","Lilja@gmail.com","framhaldsnám",0), #
+                    Haskolanemi( "011264-3069","Konni Forritunarkennari","Karl",104,"Menntaskólin við Sund","Konni@gmail.com","grunnnám",0), #
+                    Haskolanemi( "191003-2920","Sigríður Sverrisdóttir","Kona",740,"Tækniskólinn","Sigríður@gmail.com","framhaldsnám",550000,True), #
+                    Haskolanemi( "120812-3568","Stefán Pálsson","Karl",104,"Menntaskólin við Sund","Stefán@hotmail.com","grunnnám",0), #
+                    Haskolanemi( "060385-3051","Katrín Björnssdóttir","Kona",104,"Tækniskólinn","Katrín@hotmail.com","grunnnám",0)] #
+
+on = True #
+while on == True: #
+    print("1. Grunnskólanemar") #
+    print("2. Framhaldsskólanemar") #
+    print("3. Háskólanemar") #
+    print("4. Hætta") #
+    val = int(input("Veldu hvað þú vilt gera: ")) #
+    
+    if val == 1: #
+        on2 = True #
+        while on2 == True: #
+            print("1. Allir") #
+            print("2. Fjöldi Kyn") #
+            print("3. SkólaLeit") #
+            print("4. Hætta") #
+            val2 = int(input("Veldu hvað þú vilt gera: ")) #
+            
+            if val2 == 1: #
+                for nemi in grunnskolanemar: #
+                    print(nemi) #
+            elif val2 == 2: #
+                print("Karlar: ",fjoldiKyn(grunnskolanemar,"Karl")) #
+                print("Konur: ",fjoldiKyn(grunnskolanemar,"Kona")) #
+            elif val2 == 3: #
+                teljari=0 #
+                valskolar = skolar(grunnskolanemar) #
+                for skoli in valskolar: #
+                    print(teljari,skoli) #
+                    teljari = teljari+1 #
+                val3 = int(input("Veldu Skóla: ")) #
+                nemar=nemarIskola(grunnskolanemar,valskolar[val3]) #
+                for nemi in nemar: #
+                    print(nemi) #
+                    
+            elif val2 == 4: #
+                break #
+            
+    elif val == 2: #
+        on3 = True #
+        while on3 == True: #
+            print("1. Allir") #
+            print("2. AfangaFjöldi") #
+            print("3. UtanbæjarFólk") #
+            print("4. Hætta") #
+            val3 = int(input("Veldu hvað þú vilt gera: ")) #
+            
+            if val3 == 1: #
+                for nemi in framhaldsskolanemar: #
+                    print(nemi) #
+            elif val3 == 2: #
+                afangar = fjoldiAfanga(framhaldsskolanemar, 4) #
+                for nemi in afangar: #
+                    print(nemi.afangaUtskrift()) #
+                
+            elif val3 == 3: #
+                bondar = BondaFolk(framhaldsskolanemar) #
+                for nemi in bondar: #
+                    print(nemi.bondaUtskrift()) #
+            
+            elif val3 == 4: #
+                break #
+    elif val == 3: #
+        on4 = True #
+        while on4 == True: #
+            print("1. Allir") #
+            print("2. AfangaFjöldi") #
+            print("3. UtanbæjarFólk") #
+            print("4. Hætta") #
+            val4 = int(input("Veldu hvað þú vilt gera: ")) #
+            
+            if val4 == 1: #
+                print("---------------------------------------------------------------") #
+                for nemi in haskolanemar: #
+                    print(nemi) #
+                print("---------------------------------------------------------------") #
+            elif val4 == 2: #
+                print("---------------------------------------------------------------") #
+                print("allir nemendur sem eru í skuld: ") #
+                Skuld = skuldaNemendur(haskolanemar) #
+                for nemi in Skuld: #
+                    print(nemi.skuldUtskrift())  #
+                print("---------------------------------------------------------------") #
+            elif val4 == 3: #
+                print("---------------------------------------------------------------") #
+                Skuld = heildarSkuld(haskolanemar) #
+                print("heildarskuld allra nemenda er: ",Skuld,"Kr" ) #
+                print("---------------------------------------------------------------") #
+    elif val == 4: #
+        break #
