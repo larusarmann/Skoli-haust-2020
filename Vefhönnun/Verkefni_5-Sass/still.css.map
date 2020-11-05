@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,IAAI,CAAA;EACA,UAAU,EATN,MAAM;CAUb;;AAED,AAAA,EAAE,EAAC,EAAE,CAAA;EATD,KAAK,EAAE,UAAU;EACjB,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,MAAM;CASrB",
+    "sources": [
+        "still.scss"
+    ],
+    "names": [],
+    "file": "still.css"
+}

@@ -1,0 +1,15 @@
+$litur: salmon;
+
+@mixin Haus1 {
+    color: whitesmoke;
+    text-align: center;
+    font-style: italic;
+
+}
+body{
+    background:$litur;
+}
+
+h1,h2{
+    @include Haus1()
+}
