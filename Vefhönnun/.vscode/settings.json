@@ -1,0 +1,9 @@
+{
+    "LiveSassCompile.settings.formats":[
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            "savePath": "~/../Verkefni_5-Sass/"
+        }
+    ]
+}

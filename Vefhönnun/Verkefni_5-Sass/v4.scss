@@ -1,0 +1,90 @@
+html {
+  width: fit-content;
+  margin: auto;
+}
+
+
+body {
+
+    max-width: 600px;
+    margin: auto;
+    color:green;
+    padding-right: 1em;
+    padding-left: 1em;
+  
+}
+form{
+  margin: auto;
+
+}
+
+.dalkur {
+  width: 100%;
+}
+
+
+table, th, td {
+  border: 1px solid grey;
+  background: white;
+  padding: 8px;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+table {
+  width:100%;
+
+}
+
+th {
+  height: 40px;
+  background-color: white;
+}
+
+
+
+/* mobile*/ 
+@media screen and (min-width:600px) {
+    .dalkur {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+    }
+    .second{
+      padding-left: 10px;
+    }
+    textarea {
+      display: block;
+      width: 100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .smart-table thead {
+      display: none;
+    }
+    .smart-table tr,
+    .smart-table td {
+      display: block;
+    }
+
+    .smart-table tr:not(last-child) {
+      border-bottom: 5px solid white;
+    }
+
+    .smart-table td {
+      padding-left: 54%;
+      position: relative;
+    }
+
+    .smart-table td::before {
+      position: absolute;
+      padding:5px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 45%;
+      content: attr(data-col-title);
+      background-color: white;
+    }
+
+} 

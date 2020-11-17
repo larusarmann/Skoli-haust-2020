@@ -29,3 +29,10 @@ VERKEFNI 3
 VERKEFNI 4
 
   * [VERKEFNI 4 Listi og Form](Vefhönnun/Verkefni_4-taflaOgForm/Form.html)
+
+-----------------------------------------------------------------------
+
+VERKEFNI 6
+
+  * [VERKEFNI 4 Listi og Form](Vefhönnun/static-env/recipe-ssg/output/home.html)
+

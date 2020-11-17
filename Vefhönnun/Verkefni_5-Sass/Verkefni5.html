@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="v5.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <label for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle"/>
+        <nav class="menu">
+            <a href="https://github.com/larusarmann"><span class="icon-github"></span>Github</a>
+            <a href="https://twitter.com/Ronni_strongman"><span class="icon-twitter"></span>Twitter</a>
+            <a href="https://steamcommunity.com/id/larus03/"><span class="icon-steam2"></span>Steam</a>
+        </nav>
+    </div>
+
+    <div>
+        <form method="" action="#">
+            <textarea name="texti" id="texti" placeholder=""></textarea>
+            <br>
+            <div class ="dalkur">
+                <section>
+                    <label>Nafn:</label><br>
+                    <input type="text" placeholder="Nafn" name="nafn" required>
+                    <br>
+                    <label>Símanúmer:</label><br>
+                    <input type="number" placeholder="1234567" name="Sími" required>
+                    <br>
+                    <label>Email:</label><br>
+                    <input type="email" placeholder="Test@Gmail.com" name="Email" required>
+                    <br>
+                </section>
+                <section class="second">
+                    <label>Dagsetning:</label><br>
+                    <input type="Date" name="" required>
+                    <br>
+    
+                    <input type="Checkbox" checked> Val 1
+    
+                    <input type="Checkbox"> Val 2
+    
+                    <input type="Checkbox"> Val 3
+    
+                    <input type="Checkbox"> Val 4
+                    <br>
+    
+                    <input type="radio" name="day" value="Friday" checked> Friday<br>
+                    <input type="radio" name="day" value="Saturday" checked> Saturday<br>
+                    <input type="radio" name="day" value="Sunday" checked> Sunday<br>
+    
+                    <select name="day">
+                        <option value="Friday" selected>Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                        <br>
+                    </select>
+                    <br>
+                    <br>
+                    <Input type="submit" value = "Skra">
+                </section>
+            </div>
+            <div class="divtable">
+                        <h2 class="title"></h2>
+                <table class="smart-table">
+                  <thead>
+                    <tr>
+                      <th>Fyrirtæki</th>
+                      <th>Sími</th>
+                      <th>Hlutverk</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-col-title="Fyrirtæki"><a href="https://www.dominos.is">Dominos Pizza</a></td>
+                      <td data-col-title="Sími">581 2345</td>
+                      <td data-col-title="Hlutverk">Pizzastaður</td>
+                    </tr>
+                    <tr>
+                        <td data-col-title="Fyrirtæki"><a href="https://tskoli.is">Tækniskólinn</a></td>
+                        <td data-col-title="Sími">514 9000</td>
+                        <td data-col-title="Hlutverk">Skóli</td>
+                    </tr>
+                    <tr>
+                        <td data-col-title="Fyrirtæki"><a href="https://github.com/larusarmann">Github</a></td>
+                        <td data-col-title="Sími">??? ????</td>
+                        <td data-col-title="Hlutverk">Skráasafn</td>
+                    </tr>
+                  </tbody>    
+                </table>
+            </div>
+        </form>
+      </div> 
+</body>
+</html>
