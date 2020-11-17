@@ -34,5 +34,5 @@ VERKEFNI 4
 
 VERKEFNI 6
 
-  * [VERKEFNI 4 Listi og Form](Vefhönnun/static-env/recipe-ssg/output/home.html)
+  * [VERKEFNI 6 Static Site Generator](Vefhönnun/static_env/recipe-ssg/output/home.html)
 
