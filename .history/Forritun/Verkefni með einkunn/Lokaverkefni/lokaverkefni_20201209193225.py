@@ -96,7 +96,7 @@ class MyGame(arcade.Window): #býr til Klasa
             arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
         elif self.score >=5 and self.flag==False: #endaskjárinn
             arcade.set_background_color(arcade.color.BUBBLES)
-            arcade.draw_text("Leik lokið ",self.view_left+200,self.view_bottom+300, arcade.color.CHERRY, 44)#skrifar á skjáin
+            arcade.draw_text("Leik lokið ",self.view_left+200,self.view_bottom+300, arcade.color.CHERRY, 44)
             arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
         else:#aðal leikurinn
             arcade.set_background_color(arcade.color.AMAZON)
@@ -127,7 +127,7 @@ class MyGame(arcade.Window): #býr til Klasa
             elif key == arcade.key.RIGHT:
                 self.player_sprite.change_x = MOVEMENT_SPEED
 
-    def on_key_release(self, key, modifiers):#tengir örvatakkana við hreyfingu karakterins
+    def on_key_release(self, key, modifiers):
         if key == arcade.key.LEFT or key == arcade.key.RIGHT:
             self.player_sprite.change_x = 0
 

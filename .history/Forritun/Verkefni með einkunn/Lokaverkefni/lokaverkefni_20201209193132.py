@@ -90,20 +90,20 @@ class MyGame(arcade.Window): #býr til Klasa
     def on_draw(self):
         arcade.start_render()# renderar inn leikin
 
-        if self.flag: #intro skjárinn
+        if self.flag: 
             arcade.set_background_color(arcade.color.RED)
             arcade.draw_text(" Lárus Ármann Kjartansson\n Náðu fimm peningum til að vinna leikin \n Ýttu á Q til að hefja leik", 10,300, arcade.color.WHITE, 24)
-            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
-        elif self.score >=5 and self.flag==False: #endaskjárinn
+            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)
+        elif self.score >=5 and self.flag==False:
             arcade.set_background_color(arcade.color.BUBBLES)
-            arcade.draw_text("Leik lokið ",self.view_left+200,self.view_bottom+300, arcade.color.CHERRY, 44)#skrifar á skjáin
-            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
+            arcade.draw_text("Leik lokið ",self.view_left+200,self.view_bottom+300, arcade.color.CHERRY, 44)
+            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)
         else:#aðal leikurinn
             arcade.set_background_color(arcade.color.AMAZON)
             self.wall_list.draw()
             self.player_list.draw()
-            arcade.draw_text(f"stig: {self.score}", self.player_sprite.center_x-15,self.player_sprite.center_y+30, arcade.color.WHITE, 14)#skrifar á skjáin
-            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
+            arcade.draw_text(f"stig: {self.score}", self.player_sprite.center_x-15,self.player_sprite.center_y+30, arcade.color.WHITE, 14)
+            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)
             self.coin_list.draw()
             
     def draw_game(self):
@@ -127,7 +127,7 @@ class MyGame(arcade.Window): #býr til Klasa
             elif key == arcade.key.RIGHT:
                 self.player_sprite.change_x = MOVEMENT_SPEED
 
-    def on_key_release(self, key, modifiers):#tengir örvatakkana við hreyfingu karakterins
+    def on_key_release(self, key, modifiers):
         if key == arcade.key.LEFT or key == arcade.key.RIGHT:
             self.player_sprite.change_x = 0
 

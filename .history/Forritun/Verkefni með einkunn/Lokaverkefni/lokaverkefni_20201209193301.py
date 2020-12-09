@@ -127,7 +127,7 @@ class MyGame(arcade.Window): #býr til Klasa
             elif key == arcade.key.RIGHT:
                 self.player_sprite.change_x = MOVEMENT_SPEED
 
-    def on_key_release(self, key, modifiers):#tengir örvatakkana við hreyfingu karakterins
+    def on_key_release(self, key, modifiers):#tengir örvatakkana við hreyfingu 
         if key == arcade.key.LEFT or key == arcade.key.RIGHT:
             self.player_sprite.change_x = 0
 

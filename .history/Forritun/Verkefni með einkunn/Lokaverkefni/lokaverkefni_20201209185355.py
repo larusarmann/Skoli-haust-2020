@@ -76,7 +76,7 @@ class MyGame(arcade.Window): #býr til Klasa
         self.player_sprite = arcade.Sprite("C:/Git/Skoli-haust-2020/Forritun/Verkefni með einkunn/Lokaverkefni/images/character1.png", SPRITE_SCALING)#kallar í myndina
         self.player_list.append(self.player_sprite)
 
-        # setur byrjunarstaðsetningu karakterins
+        # etur byrjunarstaðsetningu karakterins
         self.player_sprite.center_x = 64
         self.player_sprite.center_y = 270
 
@@ -85,33 +85,33 @@ class MyGame(arcade.Window): #býr til Klasa
                                                              gravity_constant=GRAVITY)
 
         # setur bakrunn
-        arcade.set_background_color(arcade.color.SKY_BLUE)
+        arcade.set_background_color(arcade.color.SKY_)
         
     def on_draw(self):
-        arcade.start_render()# renderar inn leikin
+        arcade.start_render()
 
-        if self.flag: #intro skjárinn
+        if self.flag:
             arcade.set_background_color(arcade.color.RED)
             arcade.draw_text(" Lárus Ármann Kjartansson\n Náðu fimm peningum til að vinna leikin \n Ýttu á Q til að hefja leik", 10,300, arcade.color.WHITE, 24)
-            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
-        elif self.score >=5 and self.flag==False: #endaskjárinn
+            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)
+        elif self.score >=5 and self.flag==False:
             arcade.set_background_color(arcade.color.BUBBLES)
-            arcade.draw_text("Leik lokið ",self.view_left+200,self.view_bottom+300, arcade.color.CHERRY, 44)#skrifar á skjáin
-            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
-        else:#aðal leikurinn
+            arcade.draw_text("Leik lokið ",self.view_left+200,self.view_bottom+300, arcade.color.CHERRY, 44)
+            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)
+        else:
             arcade.set_background_color(arcade.color.AMAZON)
             self.wall_list.draw()
             self.player_list.draw()
-            arcade.draw_text(f"stig: {self.score}", self.player_sprite.center_x-15,self.player_sprite.center_y+30, arcade.color.WHITE, 14)#skrifar á skjáin
-            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)#setur nafnið mitt í allar senurnar
+            arcade.draw_text(f"stig: {self.score}", self.player_sprite.center_x-15,self.player_sprite.center_y+30, arcade.color.WHITE, 14)
+            arcade.draw_text("Lárus Ármann ",self.view_left+10,self.view_bottom+10, arcade.color.CHERRY, 14)
             self.coin_list.draw()
             
     def draw_game(self):
-        # dregur sprit-in
+        # Draw all the sprites.
         self.player_list.draw()
         self.coin_list.draw()
 
-        # prentar Stigin fyrir ofan karakterin
+        # Put the text on the screen.
         output = f"Score: {self.score}"
         arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
         
@@ -127,7 +127,7 @@ class MyGame(arcade.Window): #býr til Klasa
             elif key == arcade.key.RIGHT:
                 self.player_sprite.change_x = MOVEMENT_SPEED
 
-    def on_key_release(self, key, modifiers):#tengir örvatakkana við hreyfingu karakterins
+    def on_key_release(self, key, modifiers):
         if key == arcade.key.LEFT or key == arcade.key.RIGHT:
             self.player_sprite.change_x = 0
 
@@ -141,36 +141,44 @@ class MyGame(arcade.Window): #býr til Klasa
                 self.score=self.score+1
 
 
-       
+        # --- Manage Scrolling ---
+
+        # Keep track of if we changed the boundary. We don't want to call the
+        # set_viewport command if we didn't change the view port.
         changed = False
 
-        # Scrollar vinstri
+        # Scroll left
         left_boundary = self.view_left + VIEWPORT_MARGIN
         if self.player_sprite.left < left_boundary:
             self.view_left -= left_boundary - self.player_sprite.left
             changed = True
 
-        # Scrollar hægri
+        # Scroll right
         right_boundary = self.view_left + SCREEN_WIDTH - VIEWPORT_MARGIN
         if self.player_sprite.right > right_boundary:
             self.view_left += self.player_sprite.right - right_boundary
             changed = True
 
-        # Scrollar upp
+        # Scroll up
         top_boundary = self.view_bottom + SCREEN_HEIGHT - VIEWPORT_MARGIN
         if self.player_sprite.top > top_boundary:
             self.view_bottom += self.player_sprite.top - top_boundary
             changed = True
 
-        # Scrollar niður
+        # Scroll down
         bottom_boundary = self.view_bottom + VIEWPORT_MARGIN
         if self.player_sprite.bottom < bottom_boundary:
             self.view_bottom -= bottom_boundary - self.player_sprite.bottom
             changed = True
 
+        # Make sure our boundaries are integer values. While the view port does
+        # support floating point numbers, for this application we want every pixel
+        # in the view port to map directly onto a pixel on the screen. We don't want
+        # any rounding errors.
         self.view_left = int(self.view_left)
         self.view_bottom = int(self.view_bottom)
 
+        # If we changed the boundary values, update the view port to match
         if changed:
             arcade.set_viewport(self.view_left,
                                 SCREEN_WIDTH + self.view_left - 1,
